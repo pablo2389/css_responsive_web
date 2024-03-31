@@ -1,0 +1,74 @@
+.container {
+  flex-direction: column;
+    display: grid;
+    grid-template-areas: 
+      "header header header"
+      "sidebar content chat"
+      "sidebar content chat"
+      "footer footer footer";
+      grid-template-columns: 100px 1fr;
+    grid-gap: 5px;
+    
+  }
+  
+  .header {
+    grid-area: header;
+    grid-column: 1/6;
+    border: black 5px solid; 
+  background-color: rgba(120, 120, 192, 0.552); /* Declara el color de fondo */
+
+    text-align: center;
+    height: 200px;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    text-align: center; 
+  border: black 5px solid; 
+  background-color: rgba(120, 120, 192, 0.552);
+  grid-column: 1;
+  width: 90px;
+  height: 350px;
+  }
+  
+  .content {
+    grid-area: content;
+    text-align: center;
+    border: black 5px solid; 
+    background-color: rgba(120, 120, 192, 0.552);
+    grid-column: 2/5;
+    height: 350px;
+    width: 1250px;
+  }
+  
+  .chat {
+    grid-area: chat;
+    border: black 5px solid; 
+    background-color: rgba(120, 120, 192, 0.552);
+    grid-column: 5;
+    width: 150px;
+    text-align: center;
+    height: 350px;
+  }
+  
+  .footer {
+    grid-area: footer;
+    border: black 5px solid; 
+    background-color: rgba(120, 120, 192, 0.552);
+    text-align: center;
+    height: 200px;
+    grid-column: 1/6;
+  }
+  
+  /* Cambia la disposición para móviles */
+  @media (max-width: 600px) {
+    .container {
+      grid-template-areas: 
+        "header"
+        "content"
+        "chat"
+        "sidebar"
+        "footer";
+    }
+  }
+  
